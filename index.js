@@ -11,6 +11,8 @@ const shoppingListInDB = ref(database, "shoppingList")
 
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
+const shoppingList = document.getElementById("shopping-list")
+const node = document.createElement("li")
 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
@@ -18,4 +20,7 @@ addButtonEl.addEventListener("click", function() {
     push(shoppingListInDB, inputValue)
     
     console.log(inputValue)
+    const textnode = document.createTextNode(inputValue)
+    node.appendChild(textnode)
+    shoppingList.appendChild(node)
 })
