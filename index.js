@@ -18,11 +18,20 @@ addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
     
     push(shoppingListInDB, inputValue)
+   
+
     
-    console.log(inputValue)
-    const textnode = document.createTextNode(inputValue)
+    addToList(inputValue)
+    
+    clearField()
+})
+
+function addToList(input){
+    const textnode = document.createTextNode(inputFieldEl.value)
     node.appendChild(textnode)
     shoppingListEl.appendChild(node)
-    
+}
+
+function clearField(){
     inputFieldEl.value = ""
-})
+}
