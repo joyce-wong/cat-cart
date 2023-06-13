@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
     databaseURL: "https://cat-cart-default-rtdb.firebaseio.com/"
@@ -18,20 +18,24 @@ addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
     
     push(shoppingListInDB, inputValue)
-   
-
-    
-    addToList(inputValue)
     
     clearField()
 })
 
+onValue(shoppingListInDB, function(snapshot){
+    let shoppingListArr = Object.values(snapshot.val())
+    clearShoppingListEl()
+   shoppingListArr.forEach(item => addToList(item))
+})
+
 function addToList(input){
-    const textnode = document.createTextNode(inputFieldEl.value)
-    node.appendChild(textnode)
-    shoppingListEl.appendChild(node)
+ shoppingListEl.innerHTML += `<li>${input}</li>`
 }
 
 function clearField(){
     inputFieldEl.value = ""
+}
+
+function clearShoppingListEl(){
+    shoppingListEl.innerHTML = ""
 }
