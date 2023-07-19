@@ -1,9 +1,11 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Rubik', sans-serif;
-    background-color: #EEF0F4;
+    font-family: 'Raleway', sans-serif;
+    /* background-color: #EEF0F4; */
+    background-color: #caf0f8;
     color: #432000;
+    -webkit-user-select: none;
 }
 
 .container {
@@ -26,19 +28,20 @@ input {
     border-radius: 8px;
     font-size: 20px;
     text-align: center;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Raleway', sans-serif;
     margin: 10px 0;
 }
 
 button {
     color: #FDFDFD;
-    background-color: #AC485A;
+    /* background-color: #AC485A; */
+    background-color: #023e8a;
     border: 0;
     padding: 15px;
     border-radius: 8px;
     font-size: 20px;
     text-align: center;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 button:hover{
@@ -46,12 +49,14 @@ button:hover{
 }
 
 ul li:hover{
-    background-color: #FFECC7;
+    /* background-color: #FFECC7; */
+    background-color: #fed9b7;
     cursor: pointer;
 }
 
 #add-button:hover{
-    background-color: #432000;
+    /* background-color: #432000; */
+    background-color: #03045e;
 }
 
 ul {
@@ -63,7 +68,8 @@ ul {
 }
 
 ul li {
-    background-color: #FFFDF8;
+    /* background-color: #FFFDF8; */
+    background-color: #fdfcdc;
     color: #342211;
     font-size: 20px;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
